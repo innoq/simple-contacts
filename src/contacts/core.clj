@@ -97,14 +97,18 @@
    [:id (str "urn:contacts:feed:event:" (:id event))]
    [:content {:type "json"} (json/generate-string event)]])
 
-(defn atom-feed [events]
+(defn feed-url [request]
+  (println request)
+  (str (name (:scheme request)) "://" (get (:headers request) "host") "/feed"))
+
+(defn atom-feed [events url]
   (xml/emit-str
    (xml/sexp-as-element
     [:feed {:xmlns "http://www.w3.org/2005/Atom"}
      [:id "urn:contacts:feed"]
      [:updated (-> events last :timestamp)]
      [:title {:type "text"} "contacts events"]
-     [:link {:rel "self" :href ""}] ;; TODO
+     [:link {:rel "self" :href url}]
      (map entry events)])))
 
 (defn app-routes [event-store feed-items]
@@ -122,10 +126,10 @@
         (when-let [contact (load-contact event-store id)]
           {:status 200
            :body contact}))
-   (GET "/feed" []
+   (GET "/feed" request
         {:status 200
          :headers {"Content-Type" "application/atom+xml"}
-         :body (atom-feed (reverse @feed-items))})))
+         :body (atom-feed (reverse @feed-items) (feed-url request))})))
   
 (defn latest-items [count holder]
   (fn [item]

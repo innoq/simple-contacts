@@ -98,7 +98,6 @@
    [:content {:type "json"} (json/generate-string event)]])
 
 (defn feed-url [request]
-  (println request)
   (str (name (:scheme request)) "://" (get (:headers request) "host") "/feed"))
 
 (defn atom-feed [events url]

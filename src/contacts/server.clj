@@ -1,10 +1,14 @@
 (ns contacts.server
-  (:require [ring.adapter.jetty :refer [run-jetty]]
-            [contacts.core :as core])
+  (:require [contacts.core :as core]
+            [environ.core :refer [env]]
+            [ring.adapter.jetty :refer [run-jetty]])
   (:gen-class))
+
+(defn- port []
+  (Integer/parseInt (or (env :port) "3000")))
 
 (defn -main [& args]
   (run-jetty
     core/webapp
-    {:port 8080
+    {:port (port)
      :join? false}))

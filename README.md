@@ -6,7 +6,7 @@ The app provides a minimal json api for working with contacts. Data is stored us
 
 ## Setup
 
-    lein ring server-headless
+    lein run
 
 ## Usage
 

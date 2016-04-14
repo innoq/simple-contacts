@@ -6,6 +6,7 @@
                  [ring/ring-core "1.4.0"]
                  [ring/ring-jetty-adapter "1.4.0"]
                  [ring/ring-json "0.4.0"]]
+  :min-lein-version "2.0.0"
   :profiles {:uberjar {:aot [contacts.server]}}
   :main contacts.server
   :uberjar-name "simple-contacts.jar")

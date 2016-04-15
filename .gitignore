@@ -1,14 +1,5 @@
-/target
-/classes
-/checkouts
-pom.xml
-pom.xml.asc
-*.jar
-*.class
+### Leiningen ###
 /.lein-*
 /.nrepl-port
-*~
-.classpath
-.project
-.idea/
-simple-contacts.iml
+/target
+

@@ -7,7 +7,9 @@
             :distribution :repo
             :comments "A business-friendly OSS license"}
   :min-lein-version "2.6.1"
-  :dependencies [[com.stuartsierra/component "0.3.1"]
+  :dependencies [[bidi "2.0.6"]
+                 [com.stuartsierra/component "0.3.1"]
+                 [liberator "0.14.1"]
                  [org.clojure/clojure "1.8.0"]
                  [org.danielsz/system "0.2.0"]
                  [ring/ring-core "1.4.0"]

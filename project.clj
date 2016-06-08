@@ -11,14 +11,16 @@
                  [com.stuartsierra/component "0.3.1"]
                  [liberator "0.14.1"]
                  [org.clojure/clojure "1.8.0"]
+                 [org.clojure/data.json "0.2.6"]
                  [org.danielsz/system "0.2.0"]
                  [ring/ring-core "1.4.0"]
+                 [ring/ring-headers "0.2.0"]
                  [ring/ring-jetty-adapter "1.4.0"]
+                 [ring/ring-json "0.4.0"]
 
                  ;[compojure "1.5.0"]
                  ;[environ "1.0.2"]
                  ;[org.clojure/data.xml "0.0.8"]
-                 ;[ring/ring-json "0.4.0"]
                  ]
   :main contacts.app
   :uberjar-name "simple-contacts.jar"

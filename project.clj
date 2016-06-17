@@ -9,6 +9,7 @@
   :min-lein-version "2.6.1"
   :dependencies [[bidi "2.0.9"]
                  [com.stuartsierra/component "0.3.1"]
+                 [environ "1.0.3"]
                  [liberator "0.14.1"]
                  [org.clojure/clojure "1.8.0"]
                  [org.clojure/data.json "0.2.6"]
@@ -19,7 +20,6 @@
                  [ring/ring-json "0.4.0"]
 
                  ;[compojure "1.5.0"]
-                 ;[environ "1.0.2"]
                  ;[org.clojure/data.xml "0.0.8"]
                  ]
   :main contacts.app
